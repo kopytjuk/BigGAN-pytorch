@@ -9,4 +9,5 @@ python main.py --batch_size 2 `
     --experiment_path "$experiments_path" `
     --use_tensorboard True `
     --sample_step 10 `
-    --imsize 64
+    --imsize 64 `
+    --total_step 100
