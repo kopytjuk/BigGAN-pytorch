@@ -5,7 +5,7 @@
 
 dt=$(date '+%Y%m%d-%H%M%S')
 experimentsfolder="/home/mosaic-trainer/experiments/$dt"
-datasetfolder="/home/mosaic-trainer/data/cub-200-cropped/images"
+datasetfolder="/home/mosaic-trainer/data/cub-200-cropped"
 
 python main.py \
     --batch_size 64 \
