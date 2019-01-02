@@ -4,7 +4,7 @@
 # 3. Starts tensorboard to monitor training progress
 
 dt=$(date '+%Y%m%d-%H%M%S')
-experimentsfolder="/home/mosaic-trainer/experiments/$dt"
+experimentsfolder="/home/mosaic-trainer/experiments/${dt}_bigGAN"
 datasetfolder="/home/mosaic-trainer/data/cub-200-cropped"
 
 python main.py \
