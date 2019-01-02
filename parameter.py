@@ -43,10 +43,6 @@ def get_parameters():
     # Path
     parser.add_argument('--image_path', type=str, default='./data')
     parser.add_argument('--experiment_path', type=str, default='./data')
-    parser.add_argument('--log_path', type=str, default='./logs')
-    parser.add_argument('--model_save_path', type=str, default='./models')
-    parser.add_argument('--sample_path', type=str, default='./samples')
-    parser.add_argument('--attn_path', type=str, default='./attn')
 
     # Step size
     parser.add_argument('--log_step', type=int, default=10)
