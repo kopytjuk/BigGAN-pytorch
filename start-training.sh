@@ -8,7 +8,8 @@ experimentsfolder="/home/mosaic-trainer/experiments/$dt"
 datasetfolder="/home/mosaic-trainer/data/cub-200-cropped"
 
 python main.py \
-    --batch_size 64 \
+    --batch_size 16 \
+    --imsize 128 \
     --dataset off \
     --adv_loss hinge \
     --version alpha_v1 \

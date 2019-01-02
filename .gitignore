@@ -5,6 +5,7 @@
 *.ipynb
 */*.ipynb
 */*.pyc
+*.pyc
 test
 test/*
 *.local
