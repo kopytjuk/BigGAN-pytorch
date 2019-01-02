@@ -6,7 +6,7 @@ import datetime
 
 import torch.nn as nn
 from torch.autograd import Variable
-from torchvision.utils import save_image
+from torchvision.utils import save_image, make_grid
 
 from model_resnet import Generator, Discriminator
 from utils import *
@@ -209,6 +209,9 @@ class Trainer(object):
                 fake_images= self.G(fixed_z, z_class_one_hot)
                 save_image(denorm(fake_images.data),
                            os.path.join(self.sample_path, '{}_fake.png'.format(step + 1)))
+                
+                if self.use_tensorboard:
+                    self.writer.add_image("generated", make_grid(denorm(fake_images.data)), step+1)
 
             if (step+1) % model_save_step==0:
                 torch.save(self.G.state_dict(),
