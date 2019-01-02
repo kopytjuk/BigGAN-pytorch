@@ -211,7 +211,8 @@ class Trainer(object):
                            os.path.join(self.sample_path, '{}_fake.png'.format(step + 1)))
                 
                 if self.use_tensorboard:
-                    self.writer.add_image("generated", make_grid(denorm(fake_images.data)), step+1)
+                    n_images = min(10, self.batch_size)
+                    self.writer.add_image("generated", make_grid(denorm(fake_images.data[n_images, ...]), nrow=5), step+1)
 
             if (step+1) % model_save_step==0:
                 torch.save(self.G.state_dict(),
