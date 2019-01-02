@@ -1,5 +1,4 @@
-
-ignore this files when commit.
+# ignore this files when commit.
 
 *.pth
 *.log
@@ -43,6 +42,7 @@ Thumbs.db
 *.swp
 *.pyc
 *.swo
+__pycache__
 
 # user generaged files.
 repo/
