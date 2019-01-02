@@ -205,14 +205,15 @@ class Trainer(object):
 
             # Sample images
             if (step + 1) % self.sample_step == 0:
-                print('Sample images {}_fake.png'.format(step + 1))
+                # generate fake image
                 fake_images= self.G(fixed_z, z_class_one_hot)
-                save_image(denorm(fake_images.data),
-                           os.path.join(self.sample_path, '{}_fake.png'.format(step + 1)))
                 
                 if self.use_tensorboard:
                     n_images = min(10, self.batch_size)
-                    self.writer.add_image("generated", make_grid(denorm(fake_images.data[n_images, ...]), nrow=5), step+1)
+                    self.writer.add_image("generated", make_grid(denorm(fake_images.data[:n_images, ...]), nrow=5), step+1)
+                else:
+                    save_image(denorm(fake_images.data),
+                           os.path.join(self.sample_path, '{}_fake.png'.format(step + 1)))
 
             if (step+1) % model_save_step==0:
                 torch.save(self.G.state_dict(),
