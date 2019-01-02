@@ -14,6 +14,6 @@ python main.py \
     --version alpha_v1 \
     --use_tensorboard True \
     --experiment_path "$experimentsfolder" \
-    --image_path "$dataset_folder" \
+    --image_path "$datasetfolder" \
     & \
 tensorboard --logdir="$experimentsfolder/logs" --host 0.0.0.0 --port 6006
