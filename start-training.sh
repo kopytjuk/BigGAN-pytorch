@@ -16,5 +16,7 @@ python main.py \
     --use_tensorboard True \
     --experiment_path "$experimentsfolder" \
     --image_path "$datasetfolder" \
+    --model_save_step 1 \
+    --sample_step 100 \
     & \
-tensorboard --logdir="$experimentsfolder/logs" --host 0.0.0.0 --port 6006
+tensorboard --logdir="$experimentsfolder/logs/tf_logs" --host 0.0.0.0 --port 6006
