@@ -4,7 +4,7 @@ from trainer import Trainer
 # from tester import Tester
 from data_loader import Data_Loader
 from torch.backends import cudnn
-from utils import make_folder
+from utils import make_folder, make_folder_simple
 
 import glob
 import os
@@ -21,10 +21,16 @@ def main(config):
                              config.batch_size, shuf=config.train)
 
     # Create directories if not exist
-    make_folder(config.model_save_path, config.version)
-    make_folder(config.sample_path, config.version)
-    make_folder(config.log_path, config.version)
-    make_folder(config.attn_path, config.version)
+    make_folder_simple(config.experiment_path)
+    model_save_path = os.path.join(config.experiment_path, 'models')
+    sample_path = os.path.join(config.experiment_path, 'samples')
+    log_path = os.path.join(config.experiment_path, 'logs')
+    attn_path = os.path.join(config.experiment_path, 'attn')
+
+    make_folder_simple(model_save_path)
+    make_folder_simple(sample_path)
+    make_folder_simple(log_path)
+    make_folder_simple(attn_path)
 
 
     print('config data_loader and build logs folder')

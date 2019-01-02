@@ -4,8 +4,12 @@ from torch.autograd import Variable
 from torch.nn import init
 
 def make_folder(path, version):
-        if not os.path.exists(os.path.join(path, version)):
-            os.makedirs(os.path.join(path, version))
+    if not os.path.exists(os.path.join(path, version)):
+        os.makedirs(os.path.join(path, version))
+
+def make_folder_simple(path):
+    if not os.path.exists(os.path.join(path)):
+            os.makedirs(os.path.join(path))
 
 
 def tensor2var(x, grad=False):

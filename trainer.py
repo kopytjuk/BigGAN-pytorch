@@ -45,9 +45,9 @@ class Trainer(object):
         self.dataset = config.dataset
         self.use_tensorboard = config.use_tensorboard
         self.image_path = config.image_path
-        self.log_path = config.log_path
-        self.model_save_path = config.model_save_path
-        self.sample_path = config.sample_path
+
+        self.experiment_path = config.experiment_path
+        
         self.log_step = config.log_step
         self.sample_step = config.sample_step
         self.model_save_step = config.model_save_step
@@ -57,9 +57,10 @@ class Trainer(object):
         self.chn = config.chn
 
         # Path
-        self.log_path = os.path.join(config.log_path, self.version)
-        self.sample_path = os.path.join(config.sample_path, self.version)
-        self.model_save_path = os.path.join(config.model_save_path, self.version)
+        self.model_save_path = os.path.join(config.experiment_path, 'models')
+        self.sample_path = os.path.join(config.experiment_path, 'samples')
+        self.log_path = os.path.join(config.experiment_path, 'logs')
+        self.attn_path = os.path.join(config.experiment_path, 'attn')
 
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
