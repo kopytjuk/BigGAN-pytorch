@@ -8,7 +8,7 @@ experimentsfolder="/home/mosaic-trainer/experiments/${dt}_bigGAN"
 datasetfolder="/home/mosaic-trainer/data/cub-200-cropped"
 
 python main.py \
-    --batch_size 16 \
+    --batch_size 20 \
     --imsize 128 \
     --dataset off \
     --adv_loss hinge \
